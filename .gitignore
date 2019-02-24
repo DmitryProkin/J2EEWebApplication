@@ -3,6 +3,10 @@ out/
 test/
 maven_lab.iml
 src/test
-target/
+J2EE_web1/target/classes/ 
+J2EE_web1/target/generated-sources/ 
+J2EE_web1/target/JEE2_web1-1.0-SNAPSHOT/ 
+J2EE_web1/target/maven-archiver/ 
+J2EE_web1/traget/maven-status/ 
+J2EE_web1/target/JEE2_web1-1.0-SNAPSHOT.jar
 lib/
-/!JEE2_web1-1.0-SNAPSHOT.war
