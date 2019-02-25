@@ -8,23 +8,28 @@ import java.util.Scanner;
 
 public class WebServiceClient {
     public static void main(String[] args) throws MalformedURLException {
-        URL url = new URL("http://desktop-tiide9g:8080/JEE2_web1-17721011224133667174.0-SNAPSHOT/PersonService?wsdl");
-        PersonService personService = new PersonService(url);
-        List<Person> persons = personService.getPersonWebServicePort().getAllPersons();
-        for (Person person : persons) {
-            System.out.println("id: " + person.getId() +", name: " + person.getName() +
-                    ", surname: " + person.getSurname() +", secondname: " +person.secondname + ", age: " + person.getAge());
+        URL url = new URL("http://desktop-tiide9g:8080/JEE2_web1-189181633687756108.0-SNAPSHOT/MotorbikeService?wsdl");
+        MotorbikeService motorbikeService = new MotorbikeService(url);
+        List<Motorbike> bikes = motorbikeService.getMotorbikeWebServicePort().getAllBikes();
+        for (Motorbike motorbike: bikes) {
+            System.out.println("id: " + motorbike.getId() +
+                    ", brand='" + motorbike.getBrand() +
+                    ", model='" + motorbike.getModel() +
+                    ", color='" + motorbike.getColor() +
+                    ", fueltank='" + motorbike.getFueltank() +
+                    ", weight='" + motorbike.getWeight() );
         }
-        System.out.println("Total persons: " + persons.size());
+        System.out.println("Total persons: " + bikes.size());
 
         Scanner in = new Scanner(System.in);
 
-
         String b;
         long id;
-        String name;
-        String surname;
-        String secondname;
+        String brand;
+        String model;
+        String color;
+        String fueltank;
+        String weight;
         String request;
 
         do {
@@ -32,10 +37,14 @@ public class WebServiceClient {
             request = in.nextLine();
 
 
-            List<Person> persons1 = personService.getPersonWebServicePort().getFind(request);
-            for (Person person : persons1) {
-                System.out.println("id: " + person.getId() +", name: " + person.getName() +
-                        ", surname: " + person.getSurname() +", secondname: " +person.secondname + ", age: " + person.getAge());
+            List<Motorbike> bikes1 = motorbikeService.getMotorbikeWebServicePort().getFind(request);
+            for (Motorbike motorbike: bikes1) {
+                System.out.println("id: " + motorbike.getId() +
+                        ", brand='" + motorbike.getBrand() +
+                        ", model='" + motorbike.getModel() +
+                        ", color='" + motorbike.getColor() +
+                        ", fueltank='" + motorbike.getFueltank() +
+                        ", weight='" + motorbike.getWeight() );
             }
             System.out.println("What do you want to search on database? (yes/no)");
             b = in.nextLine();

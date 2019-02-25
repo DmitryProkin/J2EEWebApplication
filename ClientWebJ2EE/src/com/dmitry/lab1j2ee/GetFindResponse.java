@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://lab1J2ee.dmitry.com/}person" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://lab1J2ee.dmitry.com/}motorbike" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 public class GetFindResponse {
 
     @XmlElement(name = "return")
-    protected List<Person> _return;
+    protected List<Motorbike> _return;
 
     /**
      * Gets the value of the return property.
@@ -55,13 +55,13 @@ public class GetFindResponse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Person }
+     * {@link Motorbike }
      * 
      * 
      */
-    public List<Person> getReturn() {
+    public List<Motorbike> getReturn() {
         if (_return == null) {
-            _return = new ArrayList<Person>();
+            _return = new ArrayList<Motorbike>();
         }
         return this._return;
     }

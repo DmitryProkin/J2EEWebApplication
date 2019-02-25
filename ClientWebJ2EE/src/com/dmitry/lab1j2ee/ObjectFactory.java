@@ -24,9 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetAllPersons_QNAME = new QName("http://lab1J2ee.dmitry.com/", "getAllPersons");
+    private final static QName _GetAllBikes_QNAME = new QName("http://lab1J2ee.dmitry.com/", "getAllBikes");
+    private final static QName _GetAllBikesResponse_QNAME = new QName("http://lab1J2ee.dmitry.com/", "getAllBikesResponse");
     private final static QName _GetFind_QNAME = new QName("http://lab1J2ee.dmitry.com/", "getFind");
-    private final static QName _GetAllPersonsResponse_QNAME = new QName("http://lab1J2ee.dmitry.com/", "getAllPersonsResponse");
     private final static QName _GetFindResponse_QNAME = new QName("http://lab1J2ee.dmitry.com/", "getFindResponse");
 
     /**
@@ -45,14 +45,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAllPersonsResponse }
-     * 
-     */
-    public GetAllPersonsResponse createGetAllPersonsResponse() {
-        return new GetAllPersonsResponse();
-    }
-
-    /**
      * Create an instance of {@link GetFindResponse }
      * 
      */
@@ -61,28 +53,45 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAllPersons }
+     * Create an instance of {@link GetAllBikes }
      * 
      */
-    public GetAllPersons createGetAllPersons() {
-        return new GetAllPersons();
+    public GetAllBikes createGetAllBikes() {
+        return new GetAllBikes();
     }
 
     /**
-     * Create an instance of {@link Person }
+     * Create an instance of {@link GetAllBikesResponse }
      * 
      */
-    public Person createPerson() {
-        return new Person();
+    public GetAllBikesResponse createGetAllBikesResponse() {
+        return new GetAllBikesResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllPersons }{@code >}}
+     * Create an instance of {@link Motorbike }
      * 
      */
-    @XmlElementDecl(namespace = "http://lab1J2ee.dmitry.com/", name = "getAllPersons")
-    public JAXBElement<GetAllPersons> createGetAllPersons(GetAllPersons value) {
-        return new JAXBElement<GetAllPersons>(_GetAllPersons_QNAME, GetAllPersons.class, null, value);
+    public Motorbike createMotorbike() {
+        return new Motorbike();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllBikes }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://lab1J2ee.dmitry.com/", name = "getAllBikes")
+    public JAXBElement<GetAllBikes> createGetAllBikes(GetAllBikes value) {
+        return new JAXBElement<GetAllBikes>(_GetAllBikes_QNAME, GetAllBikes.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllBikesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://lab1J2ee.dmitry.com/", name = "getAllBikesResponse")
+    public JAXBElement<GetAllBikesResponse> createGetAllBikesResponse(GetAllBikesResponse value) {
+        return new JAXBElement<GetAllBikesResponse>(_GetAllBikesResponse_QNAME, GetAllBikesResponse.class, null, value);
     }
 
     /**
@@ -92,15 +101,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://lab1J2ee.dmitry.com/", name = "getFind")
     public JAXBElement<GetFind> createGetFind(GetFind value) {
         return new JAXBElement<GetFind>(_GetFind_QNAME, GetFind.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllPersonsResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://lab1J2ee.dmitry.com/", name = "getAllPersonsResponse")
-    public JAXBElement<GetAllPersonsResponse> createGetAllPersonsResponse(GetAllPersonsResponse value) {
-        return new JAXBElement<GetAllPersonsResponse>(_GetAllPersonsResponse_QNAME, GetAllPersonsResponse.class, null, value);
     }
 
     /**

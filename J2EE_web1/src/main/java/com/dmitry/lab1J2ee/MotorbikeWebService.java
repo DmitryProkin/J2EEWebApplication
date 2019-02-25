@@ -10,18 +10,18 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import javax.sql.DataSource;
-@WebService(serviceName = "PersonService")
-public class PersonWebService {
+@WebService(serviceName = "MotorbikeService")
+public class MotorbikeWebService {
     @Resource(lookup = "jdbc/db_web_lab")
     private DataSource dataSource;
-    @WebMethod(operationName = "getAllPersons")
-    public List<Person> getAllPersons() {
+    @WebMethod(operationName = "getAllBikes")
+    public List<Motorbike> getAllPersons() {
 
         PostgreSQLDAO dao = new PostgreSQLDAO(getConnection());
-        return dao.getAllPersons();
+        return dao.getAllBikes();
     }
     @WebMethod(operationName = "getFind")
-    public List<Person> getFind(@WebParam(name = "personRequest") String request){
+    public List<Motorbike> getFind(@WebParam(name = "personRequest") String request){
         PostgreSQLDAO dao = new PostgreSQLDAO(getConnection());
         return dao.getFind(request);
     }
@@ -30,7 +30,7 @@ public class PersonWebService {
         try {
             result = dataSource.getConnection();
         } catch (SQLException ex) {
-            Logger.getLogger(PersonWebService.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MotorbikeWebService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result;
     }

@@ -17,47 +17,49 @@ public class PostgreSQLDAO {
         this.currentConnection = connection;
     }
 
-    public List<Person> getAllPersons() {
-        List<Person> persons = new ArrayList<>();
+    public List<Motorbike> getAllBikes() {
+        List<Motorbike> bikes = new ArrayList<>();
         try (Connection connection = currentConnection) {
             Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from persons");
+            ResultSet rs = stmt.executeQuery("select * from motorbikes");
             while (rs.next()) {
-                long id = rs.getLong("id");
-                String name = rs.getString("name");
-                String surname = rs.getString("surname");
-                String secondname = rs.getString("secondname");
-                int age = rs.getInt("age");
+                Long id = rs.getLong("id");
+                String brand = rs.getString("brand");
+                String model = rs.getString("model");
+                String color = rs.getString("color");
+                String fueltank= rs.getString("fueltank");
+                String weight = rs.getString("weight");
 
-                Person person = new Person(id, name, surname, secondname, age);
-                persons.add(person);
+                Motorbike bike = new Motorbike(id, brand, model, color, fueltank, weight);
+                bikes.add(bike);
             }
         } catch (SQLException ex) {
             Logger.getLogger(PostgreSQLDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return persons;
+        return bikes;
     }
 
 
-    public List<Person> getFind(String request ) {
-        List<Person> persons = new ArrayList<>();
+    public List<Motorbike> getFind(String request ) {
+        List<Motorbike> bikes = new ArrayList<>();
         try (Connection connection = currentConnection) {
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery(request);
             while (rs.next()) {
-                long id = rs.getLong("id");
-                String name = rs.getString("name");
-                String surname = rs.getString("surname");
-                String secondname = rs.getString("secondname");
-                int age = rs.getInt("age");
+                Long id = rs.getLong("id");
+                String brand = rs.getString("brand");
+                String model = rs.getString("model");
+                String color = rs.getString("color");
+                String fueltank= rs.getString("fueltank");
+                String weight = rs.getString("weight");
 
-                Person person = new Person(id, name, surname, secondname, age);
-                persons.add(person);
+                Motorbike bike = new Motorbike(id, brand, model, color, fueltank, weight);
+                bikes.add(bike);
             }
         } catch (SQLException ex) {
             Logger.getLogger(PostgreSQLDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return persons;
+        return bikes;
     }
 
 }

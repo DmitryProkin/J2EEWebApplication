@@ -18,37 +18,37 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "PersonWebService", targetNamespace = "http://lab1J2ee.dmitry.com/")
+@WebService(name = "MotorbikeWebService", targetNamespace = "http://lab1J2ee.dmitry.com/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
-public interface PersonWebService {
+public interface MotorbikeWebService {
 
 
     /**
      * 
      * @return
-     *     returns java.util.List<com.dmitry.lab1j2ee.Person>
+     *     returns java.util.List<com.dmitry.lab1j2ee.Motorbike>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getAllPersons", targetNamespace = "http://lab1J2ee.dmitry.com/", className = "com.dmitry.lab1j2ee.GetAllPersons")
-    @ResponseWrapper(localName = "getAllPersonsResponse", targetNamespace = "http://lab1J2ee.dmitry.com/", className = "com.dmitry.lab1j2ee.GetAllPersonsResponse")
-    @Action(input = "http://lab1J2ee.dmitry.com/PersonWebService/getAllPersonsRequest", output = "http://lab1J2ee.dmitry.com/PersonWebService/getAllPersonsResponse")
-    public List<Person> getAllPersons();
+    @RequestWrapper(localName = "getAllBikes", targetNamespace = "http://lab1J2ee.dmitry.com/", className = "com.dmitry.lab1j2ee.GetAllBikes")
+    @ResponseWrapper(localName = "getAllBikesResponse", targetNamespace = "http://lab1J2ee.dmitry.com/", className = "com.dmitry.lab1j2ee.GetAllBikesResponse")
+    @Action(input = "http://lab1J2ee.dmitry.com/MotorbikeWebService/getAllBikesRequest", output = "http://lab1J2ee.dmitry.com/MotorbikeWebService/getAllBikesResponse")
+    public List<Motorbike> getAllBikes();
 
     /**
      * 
      * @param personRequest
      * @return
-     *     returns java.util.List<com.dmitry.lab1j2ee.Person>
+     *     returns java.util.List<com.dmitry.lab1j2ee.Motorbike>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "getFind", targetNamespace = "http://lab1J2ee.dmitry.com/", className = "com.dmitry.lab1j2ee.GetFind")
     @ResponseWrapper(localName = "getFindResponse", targetNamespace = "http://lab1J2ee.dmitry.com/", className = "com.dmitry.lab1j2ee.GetFindResponse")
-    @Action(input = "http://lab1J2ee.dmitry.com/PersonWebService/getFindRequest", output = "http://lab1J2ee.dmitry.com/PersonWebService/getFindResponse")
-    public List<Person> getFind(
+    @Action(input = "http://lab1J2ee.dmitry.com/MotorbikeWebService/getFindRequest", output = "http://lab1J2ee.dmitry.com/MotorbikeWebService/getFindResponse")
+    public List<Motorbike> getFind(
         @WebParam(name = "personRequest", targetNamespace = "")
         String personRequest);
 
