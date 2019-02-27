@@ -21,9 +21,9 @@ public class MotorbikeWebService {
         return dao.getAllBikes();
     }
     @WebMethod(operationName = "getFind")
-    public List<Motorbike> getFind(@WebParam(name = "personRequest") String request){
+    public List<Motorbike> getFind(@WebParam(name = "personRequest") String brand, String model, String color, String fueltank, String weight){
         PostgreSQLDAO dao = new PostgreSQLDAO(getConnection());
-        return dao.getFind(request);
+        return dao.getFind(brand, model, color, fueltank, weight);
     }
     private Connection getConnection() {
         Connection result = null;

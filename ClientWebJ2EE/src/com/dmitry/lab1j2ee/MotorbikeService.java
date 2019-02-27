@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "MotorbikeService", targetNamespace = "http://lab1J2ee.dmitry.com/", wsdlLocation = "http://desktop-tiide9g:8080/JEE2_web1-15873588554246008657.0-SNAPSHOT/MotorbikeService?wsdl")
+@WebServiceClient(name = "MotorbikeService", targetNamespace = "http://lab1J2ee.dmitry.com/", wsdlLocation = "http://desktop-tiide9g:8080/JEE2_web1-13876637809199834880.0-SNAPSHOT/MotorbikeService?wsdl")
 public class MotorbikeService
     extends Service
 {
@@ -30,7 +30,7 @@ public class MotorbikeService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://desktop-tiide9g:8080/JEE2_web1-15873588554246008657.0-SNAPSHOT/MotorbikeService?wsdl");
+            url = new URL("http://desktop-tiide9g:8080/JEE2_web1-13876637809199834880.0-SNAPSHOT/MotorbikeService?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

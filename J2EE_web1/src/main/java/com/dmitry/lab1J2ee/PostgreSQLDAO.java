@@ -40,18 +40,30 @@ public class PostgreSQLDAO {
     }
 
 
-    public List<Motorbike> getFind(String request ) {
+    public List<Motorbike> getFind(String brand, String model, String color, String fueltank, String weight ) {
         List<Motorbike> bikes = new ArrayList<>();
+        ArrayList<String> particles = new ArrayList<>();
         try (Connection connection = currentConnection) {
             Statement stmt = connection.createStatement();
+            if(brand.trim().length()!=0){particles.add("brand='"+brand+"'");}
+            if(model.trim().length()!=0){particles.add("model='"+model+"'");}
+            if(color.trim().length()!=0){particles.add("color='"+color+"'");}
+            if(fueltank.trim().length()!=0){particles.add("fueltank='"+fueltank+"'");}
+            if(weight.trim().length()!=0){particles.add("weight='"+weight+"'");}
+            String request= "Select * from motorbikes where ";
+            request = request  +particles.get(0);
+            for (int i=0;i<particles.size();i++){
+                request+= " and " +particles.get(i);
+            }
+            request+= ';';
             ResultSet rs = stmt.executeQuery(request);
             while (rs.next()) {
                 Long id = rs.getLong("id");
-                String brand = rs.getString("brand");
-                String model = rs.getString("model");
-                String color = rs.getString("color");
-                String fueltank= rs.getString("fueltank");
-                String weight = rs.getString("weight");
+                brand = rs.getString("brand");
+                model = rs.getString("model");
+                color = rs.getString("color");
+                fueltank= rs.getString("fueltank");
+                weight = rs.getString("weight");
 
                 Motorbike bike = new Motorbike(id, brand, model, color, fueltank, weight);
                 bikes.add(bike);

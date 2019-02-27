@@ -39,6 +39,10 @@ public interface MotorbikeWebService {
 
     /**
      * 
+     * @param arg3
+     * @param arg2
+     * @param arg4
+     * @param arg1
      * @param personRequest
      * @return
      *     returns java.util.List<com.dmitry.lab1j2ee.Motorbike>
@@ -50,6 +54,14 @@ public interface MotorbikeWebService {
     @Action(input = "http://lab1J2ee.dmitry.com/MotorbikeWebService/getFindRequest", output = "http://lab1J2ee.dmitry.com/MotorbikeWebService/getFindResponse")
     public List<Motorbike> getFind(
         @WebParam(name = "personRequest", targetNamespace = "")
-        String personRequest);
+        String personRequest,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        String arg3,
+        @WebParam(name = "arg4", targetNamespace = "")
+        String arg4);
 
 }
